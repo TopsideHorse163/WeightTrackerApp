@@ -2,34 +2,47 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:WeightTracker.ViewModels" x:DataType="viewmodels:EnterWeightViewModel"
              x:Class="WeightTracker.Views.EnterWeight"
-             
              BackgroundColor="LightBlue">
 
-    
+    <ContentPage.BindingContext>
+        <viewmodels:EnterWeightViewModel/>
+    </ContentPage.BindingContext>
 
 
     <StackLayout>
-        <Label 
-               
+        
+            <Label 
                VerticalOptions="Center"
                HorizontalOptions="Center"
-               FontSize="24"
+               FontSize="36"
                x:Name="LabelName"
-               TextColor="Black"/>
-
+               TextColor="Black"
+               Padding="15"
+               Text="{Binding EnteredWeight}"/>
+        
+        
+        <Frame x:Name="Entry_Frame"
+               CornerRadius="15">
         <Entry x:Name="Entry_Weight"
                    Grid.Row="2"
                    Placeholder="Please Enter Weight"
                    VerticalOptions="Center"
-                   HorizontalOptions="Center"/>
-
+                   HorizontalOptions="Center"
+                   Text="{Binding EnteredWeight}"
+                   />
+        </Frame>
+        
+        <Frame x:Name="Button_Frame"
+               CornerRadius="15"
+               >
         <Button x:Name="SaveButton" 
                 Grid.Row="3"
                 Text="Save" 
                 BackgroundColor="White"
                 Clicked="SaveButton_Clicked"
                />
-        </StackLayout>
+        </Frame>
+    </StackLayout>
 
 
 </ContentPage>

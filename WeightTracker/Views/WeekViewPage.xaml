@@ -1,13 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WeightTracker.Views.WeekView">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodel="clr-namespace:WeightTracker.ViewModels"
+             x:Class="WeightTracker.Views.WeekView"
+             BackgroundColor="LightBlue"
+             >
+
+    <ContentPage.BindingContext>
+        <viewmodel:WeekViewViewModel/>
+    </ContentPage.BindingContext>
+    <!--To get the list view working the data you are binding to has to be in the code behind
+    Hopefully when you add the database you can reference it with the using NameOfClass to get it to populate the data there.   -->
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Week View"
-                FontSize="24"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ListView x:Name="myListView" ItemsSource="{Binding myList}">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding TodaysWeight}" 
+                              Text="{Binding TodaysDate}" 
+                              TextColor="Black"
+                              />
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
     </ContentPage.Content>
 </ContentPage>
