@@ -12,12 +12,14 @@
     <!--To get the list view working the data you are binding to has to be in the code behind
     Hopefully when you add the database you can reference it with the using NameOfClass to get it to populate the data there.   -->
     <ContentPage.Content>
+
+        
         <ListView x:Name="myListView" ItemsSource="{Binding myList}">
             
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Detail="{Binding TodaysWeight}" 
-                              Text="{Binding TodaysDate}" 
+                    <TextCell Text="{Binding TodaysDate}"
+                              Detail="{Binding TodaysWeight}" 
                               TextColor="Black"
                               />
                     

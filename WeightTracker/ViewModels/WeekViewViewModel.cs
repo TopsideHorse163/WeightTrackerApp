@@ -7,13 +7,31 @@ using WeightTracker.Models;
 
 namespace WeightTracker.ViewModels
 {
-    public class WeekViewViewModel : BindableObject
+    public class WeekViewViewModel : INotifyPropertyChanged
     {
-        
+        public string todaysWeight;
+        public string TodaysWeight
+        {
+            get => todaysWeight;
+            set
+            {
+                if(todaysWeight == value)
+                {
+                    return;
+                }
+                else
+                {
+                    todaysWeight = value;
+                    OnPropertyChanged(TodaysWeight);
+                }
+            }
+        }
 
-       
+        public event PropertyChangedEventHandler PropertyChanged;
 
-
-
+        void OnPropertyChanged(string todaysWeight)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(todaysWeight));
+        }
     }
 }

@@ -15,12 +15,15 @@ namespace WeightTracker.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WeekView : ContentPage
     {
+        EnterWeightViewModel enterWeightViewModel = new EnterWeightViewModel();
+        WeekViewViewModel weekViewViewModel = new WeekViewViewModel();
+
         public WeekView()
         {
         List<Weight> myList = new List<Weight>
         {
-           //  new Weight{TodaysDate = DateTime.Today.ToShortDateString(), TodaysWeight = EnterWeightViewModel.EnteredWeight},
-             //new Weight{TodaysDate = DateTime.Today.ToShortDateString(), TodaysWeight = EnterWeightViewModel.EnteredWeight},
+           
+            
         };
             InitializeComponent();
             myListView.ItemsSource = myList;
