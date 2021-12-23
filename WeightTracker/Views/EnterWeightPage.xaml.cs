@@ -30,5 +30,7 @@ namespace WeightTracker.Views
         {
             ewvm.EnteredWeight = EntryWeight.Text;
         }
+
+        
     }
 }
