@@ -14,6 +14,7 @@
 
     <StackLayout>
         
+            
             <Label 
                VerticalOptions="Center"
                HorizontalOptions="Center"
@@ -22,6 +23,7 @@
                TextColor="Black"
                Padding="15"
                />
+
         
         
         <Frame x:Name="Entry_Frame"

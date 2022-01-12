@@ -17,7 +17,7 @@ namespace WeightTracker.ViewModels
         public EnterWeightViewModel()
         {
             UpdateWeight = new Command(SetWeight);
-            AddCommand = new AsyncCommand();
+           // AddCommand = new AsyncCommand(SetWeight());
             Person = new ObservableRangeCollection<string>();
         }
 
@@ -25,7 +25,7 @@ namespace WeightTracker.ViewModels
 
         //Commands ------------------------------------------------------------------------------------------------------
 
-        public AsyncCommand AddCommand { get; }
+      //  public AsyncCommand AddCommand { get; }
 
         public ICommand UpdateWeight { get; }
 
@@ -53,6 +53,7 @@ namespace WeightTracker.ViewModels
             get => todaysDate;
             set => SetProperty(ref todaysDate, value);
         }
+
 
         public string enterWeight;
         public string EnteredWeight
