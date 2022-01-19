@@ -22,8 +22,7 @@ namespace WeightTracker.ViewModels
         }
 
         ObservableRangeCollection<string> Person { get; }
-
-        //Commands ------------------------------------------------------------------------------------------------------
+//Commands ------------------------------------------------------------------------------------------------------
 
       //  public AsyncCommand AddCommand { get; }
 
